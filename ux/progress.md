@@ -1,77 +1,42 @@
-# Portfolio UX Design & Prototype Engineering Progress
+# Portfolio UX — Progress
 
-## Status Overview
-- **Project**: Bathala Praveenkumar - AI Engineer & Python Backend Developer Portfolio
-- **Directory**: `ux/`
-- **Phase**: Complete UX Specification & Working Interactive Prototype
-- **Last Updated**: 2026-11-07
+## Status
+- **Project:** Bathala Praveenkumar — Backend & GenAI engineer portfolio
+- **Prototype:** `ux/prototype.html` (single file, no build)
+- **Last updated:** 2026-11-14
 
----
+## 2026-11-14 — Audit & full redesign
+The first prototype (2026-11-07) was audited end to end and rebuilt. The earlier "complete" claims in this file (WCAG AA, QA) did not hold up: the audit found broken PDF links, a fake contact-form success, wrong avatar answers, page overflow on tablet and mobile, and invented resume claims.
 
-## Roadmap & Milestones
+| Deliverable | File |
+|---|---|
+| Existing system analysis | [docs/existing_system_analysis.md](docs/existing_system_analysis.md) |
+| Screen-by-screen audit | [docs/screen_audit.md](docs/screen_audit.md) |
+| UX audit, research & keep/cut/add | [docs/ux_audit_report.md](docs/ux_audit_report.md) |
+| Redesign strategy & exact content spec | [docs/redesign_strategy.md](docs/redesign_strategy.md) |
+| Old → new mapping & content provenance | [docs/functionality_mapping.md](docs/functionality_mapping.md) |
+| Validation | [docs/validation_report.md](docs/validation_report.md) |
 
-| # | Milestone | Status | Deliverable File |
-|---|-----------|--------|------------------|
-| 1 | Product Understanding | Complete | `ux/progress.md`, Chat Deliverable 1 |
-| 2 | Domain Research & UX Discovery | Complete | `ux/progress.md`, Chat Deliverable 2 |
-| 3 | UX Strategy & Information Architecture | Complete | `ux/progress.md`, Chat Deliverable 3 |
-| 4 | Creative Visual Design Direction | Complete | `ux/progress.md`, Chat Deliverable 4 |
-| 5 | Complete Screen Plan & Edge Cases | Complete | `ux/progress.md`, Chat Deliverable 5 |
-| 6 | Working Interactive Prototype | Complete | `ux/prototype.html` |
-| 7 | Accessibility Assessment (WCAG 2.2 AA) | Complete | `ux/progress.md`, Chat Deliverable 7 |
-| 8 | Quality Assurance & Visual Verification | Complete | `ux/progress.md`, Chat Deliverable 8 |
+### Key decisions
+- Positioned as **Associate Engineer at Covasant**, with RAG and backend leading and AI-assisted (spec-driven) engineering as the differentiator.
+- Removed: AI avatar, Hire Me, all resume download/view, simulated form, fake metrics, non-resume skills.
+- Added: RAG section with a working chunking & retrieval playground; Agent Registry flagship with diff and promotion demos; How I build; Design/Build/Scale; light/dark theme; full motion system (reduced-motion safe).
 
----
+## 2026-11-15 — v2 clarity pass
+Applied [docs/portfolio_clarity_review.md](docs/portfolio_clarity_review.md) through [docs/clarity_changes_spec.md](docs/clarity_changes_spec.md):
+- Plain-language hero with quick facts and a "What I can help with" card. One "Email me" button.
+- Nav: About · Experience · Projects · Open source · Skills · Contact.
+- One project card format (problem / my role / result). The RAG deep dive and demos sit behind "Technical details".
+- New Open source section. Skills split into Strong / Working knowledge.
+- Middle-path motion: the canvas, typing, tilt, magnetic buttons and count-ups are removed.
 
-## Detailed Milestone Log
+Owner decisions: no open-to status; no cert years, links or reply time.
 
-### Milestone 1: Product Understanding
-- **Product**: High-impact developer portfolio showcasing an AI Engineer specializing in Python backend systems, LLM agents (Google ADK), enterprise RAG, and configuration-driven ML.
-- **Source of Truth**: Extracted directly from `Praveen.pdf`.
-  - Roles: AI Engineer at Covasant (Mar 2025–Present), Freelance Software Developer & Open-Source Contributor (2022–Present).
-  - Education: B.Tech CSE (SITAMS, 2020–2024, CGPA 8.5).
-  - Certifications: Google Professional ML Engineer (2025), Microsoft Introduction to Python (2022).
-  - Open Source: Published `unified-file-reader` on PyPI.
-- **Target Audience**: AI hiring managers, engineering directors, technical recruiters, enterprise clients seeking backend/GenAI consulting.
+## 2026-11-15 — v3 (review v2)
+Applied [docs/review_v2_changes_spec.md](docs/review_v2_changes_spec.md): colour-as-wayfinding, larger type, alternating sections, plain headline with a gradient keyword, computed years, the "Ask → Find → Answer" hero card, service tiles, stats band, About story, demo thumbnails, impact-first results, architecture diagram, PyPI badges, grouped skills, favicon, print stylesheet.
 
-### Milestone 2: Domain Research & UX Discovery
-- In 2025–2026, top AI engineering portfolios require interactive proof of competence rather than static link lists.
-- Interactive features incorporated:
-  1. AI Digital Twin Avatar with conversational querying grounded strictly in resume facts, animated voice wave, and speech synthesis (Web Speech API).
-  2. Live Interactive Architecture Diff Inspector (demonstrating the Agent Registry semantic versioning & configuration change detection).
-  3. Batch Promotion Simulator (Dev -> Prod).
-
-### Milestone 3 & 4: UX Strategy & Creative Visual Direction
-- **Theme**: "Cybernetic Precision" / Obsidian Glass with Electric Cyan (`#38bdf8`) and Emerald (`#10b981`) accents.
-- **Typography**: Plus Jakarta Sans for UI readability, JetBrains Mono for configuration and system architecture elements.
-- **Design Tokens**: Defined in CSS `:root` with accessible contrast ratios (> 4.5:1 for body, > 3:1 for large text/icons).
-
-### Milestone 5: Screen Plan & Interactive State Coverage
-- Hero section with live AI Avatar widget.
-- Impact stats strip.
-- About section with 3 engineering philosophies.
-- Work experience timeline with two-node chronological progression.
-- Technical skills matrix with domain filtering tabs.
-- 5 detailed project case studies with modal deep-dives.
-- Live Agent Registry Configuration Diff Inspector with sample switcher.
-- Resume verification hub with clean PDF download (`Praveen.pdf`).
-- Production-grade contact form with async simulation, email validation, and toast notifications.
-
-### Milestone 6: Working Interactive Prototype
-- Self-contained, responsive prototype created at `ux/prototype.html`.
-- No external runtime JavaScript dependencies.
-- Features real-time voice speech synthesis, keyboard accessibility (Escape to close modals, tab-indexed elements, skip link), and responsive layouts down to mobile viewports.
-
-### Milestone 7: Accessibility Assessment (WCAG 2.2 AA)
-- Semantic landmarks (`header`, `main`, `section`, `article`, `footer`, `nav`, `role="region"`).
-- Color contrast verified: `#f8fafc` text on `#090d16` background (> 14:1 contrast ratio).
-- Form inputs accompanied by explicit `<label>` tags and `.is-invalid` visual and error descriptions.
-- `prefers-reduced-motion` media query implemented to cancel heavy animations for sensitive users.
-- Visible focus rings with 3px cyan offset.
-
-### Milestone 8: Quality Assurance & Visual Verification
-- Prototype tested locally:
-  - Form validation correctly catches blank inputs, invalid emails, and short messages.
-  - Avatar handles inquiries for stack, Covasant experience, Agent Registry, RAG pipelines, PyPI, education, and attendance system.
-  - Diff viewer dynamically updates line types (`added`, `modified`, `deleted`) on tab clicks.
-  - Modals open with locked background scroll and close cleanly on click or Escape key.
+### Open items
+- Needs owner input: photo + og:image, availability badge, cert years/links, reply time, booking link, testimonials, real impact numbers.
+- Cross-browser (Firefox/Safari) and screen-reader testing.
+- Owner to confirm the employer policy on Agent Registry details before publishing.
+- Production build/hosting not started (the prototype is a static file).
